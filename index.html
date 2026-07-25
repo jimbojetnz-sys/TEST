@@ -54,22 +54,26 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            gap: 15px;
-            padding: 30px 20px;
+            gap: 10px;
+            padding: 30px 10px;
             background-color: white;
             flex-wrap: wrap;
         }
 
         .nav-button {
-            display: inline-block;
+            display: inline-flex;
             cursor: pointer;
             transition: transform 0.3s ease;
             text-decoration: none;
+            flex: 1;
+            min-width: 100px;
+            justify-content: center;
+            align-items: flex-end;
         }
 
         .nav-button img {
             display: block;
-            max-width: 150px;
+            max-width: 100%;
             height: auto;
             width: 100%;
         }
@@ -93,12 +97,13 @@
         .logo-banner {
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 0;
             background-color: white;
+            width: 100%;
         }
 
         .logo-banner img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             display: block;
         }
@@ -131,13 +136,14 @@
         footer {
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 0;
             background-color: white;
+            width: 100%;
             margin-top: auto;
         }
 
         footer img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             display: block;
         }
@@ -145,12 +151,8 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .navigation-buttons {
-                gap: 10px;
-                padding: 20px 10px;
-            }
-
-            .nav-button img {
-                max-width: 100px;
+                gap: 8px;
+                padding: 20px 8px;
             }
 
             .nav-button:nth-child(2),
