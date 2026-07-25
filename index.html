@@ -44,14 +44,22 @@
             transform: scale(1.05);
         }
 
+        /* Navigation Buttons Container */
+        .navigation-buttons-container {
+            display: flex;
+            justify-content: center;
+            padding: 30px 150px;
+            background-color: white;
+            width: 100%;
+        }
+
         /* Main Navigation Buttons */
         .navigation-buttons {
             display: flex;
             justify-content: center;
             align-items: flex-end;
             gap: 10px;
-            padding: 30px 80px;
-            background-color: white;
+            width: 100%;
             flex-wrap: wrap;
         }
 
@@ -154,9 +162,8 @@
                 font-size: 12px;
             }
 
-            .navigation-buttons {
-                gap: 8px;
-                padding: 20px 40px;
+            .navigation-buttons-container {
+                padding: 30px 40px;
             }
 
             .nav-button:nth-child(2),
@@ -180,23 +187,25 @@
         <a href="https://discord.com" target="_blank" title="Discord">DISCORD</a>
     </div>
 
-    <!-- Main Navigation Buttons -->
-    <div class="navigation-buttons">
-        <a href="#" class="nav-button" title="Assets">
-            <img src="FTL_ASSETS/FTL_ARTIST_IMAGE.png" alt="Artist">
-        </a>
-        <a href="#" class="nav-button" title="Producer">
-            <img src="FTL_ASSETS/FTL_PRODUCER_IMAGE.png" alt="Producer">
-        </a>
-        <a href="#" class="nav-button" title="Work">
-            <img src="FTL_ASSETS/FTL_WORK_IMAGE.png" alt="Work">
-        </a>
-        <a href="#" class="nav-button" title="Contact">
-            <img src="FTL_ASSETS/FTL_CONTACT_IMAGE.png" alt="Contact">
-        </a>
-        <a href="#" class="nav-button" title="Store">
-            <img src="FTL_ASSETS/FTL_STORE_IMAGE.png" alt="Store">
-        </a>
+    <!-- Main Navigation Buttons Container -->
+    <div class="navigation-buttons-container">
+        <div class="navigation-buttons">
+            <a href="#" class="nav-button" title="Assets">
+                <img src="FTL_ASSETS/FTL_ARTIST_IMAGE.png" alt="Artist">
+            </a>
+            <a href="#" class="nav-button" title="Producer">
+                <img src="FTL_ASSETS/FTL_PRODUCER_IMAGE.png" alt="Producer">
+            </a>
+            <a href="#" class="nav-button" title="Work">
+                <img src="FTL_ASSETS/FTL_WORK_IMAGE.png" alt="Work">
+            </a>
+            <a href="#" class="nav-button" title="Contact">
+                <img src="FTL_ASSETS/FTL_CONTACT_IMAGE.png" alt="Contact">
+            </a>
+            <a href="#" class="nav-button" title="Store">
+                <img src="FTL_ASSETS/FTL_STORE_IMAGE.png" alt="Store">
+            </a>
+        </div>
     </div>
 
     <!-- Logo Banner -->
