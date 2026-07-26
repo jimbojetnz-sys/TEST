@@ -15,16 +15,16 @@
             box-sizing: border-box;
         }
 
-        body {
-            background-image: url('/FTL_ASSETS/FTL_ARTIST_CAMO.jpg');
-            background-attachment: fixed;
-            background-size: cover;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Arial', Arial, sans-serif;
-        }
+body {
+     background-image: url('/FTL_ASSETS/FTL_ARTIST_CAMO.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', Arial, sans-serif;
+}
 
 /* LOGO */
 .logo-container {
@@ -34,7 +34,7 @@
 }
 
 .logo-img {
-  max-width: 340px;
+  max-width: 600px;
   cursor: pointer;
   transition: 0.25s;
 }
@@ -120,7 +120,7 @@
 
 /* TITLE */
 .title {
-  font-family: 'Allegiance';
+  font-family: 'Arial';
   font-size: 1.2em; /* increased for balance */
 }
 
@@ -129,36 +129,34 @@
 .date { text-align: center; }
 .type { text-align: right; }
 
-/* STRETCH SYSTEM */
-
-/* TITLE (Allegiance - horizontal stretch ONLY) */
+/* TITLE */
 .title span {
   display: inline-block;
-  transform: scaleX(1.5);
   transform-origin: left;
   white-space: nowrap;
 }
 
-/* DATE + TYPE (Arial - vertical stretch ONLY) */
+/* DATE */
 .date span,
 .type span {
   display: inline-block;
-  transform: scaleY(1.3);
   transform-origin: center;
   white-space: nowrap;
 }
 
-/* FOOTER */
-.page-footer {
-  display: flex;
-  justify-content: center;
-  padding: 40px 0 60px;
-}
-.page-footer img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+       /* Footer */
+        .footer-section {
+            padding: 20px 0 0 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-section img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
 /* ANIMATION */
 @keyframes fadeUp {
@@ -173,8 +171,8 @@
 <body>
 
 <div class="logo-container">
-  <a href="https://frontlineug.com/" title="Back to Home">
-    <img src="/FTL_ASSETS/FTL_LOGO.png" alt="FTL Logo">
+  <a href="https://frontlineug.com/">
+    <img src="/FTL_ASSETS/FTL_LOGO.png" class="logo-img">
   </a>
 </div>
 
@@ -195,10 +193,14 @@
     { name: 'Artist Name', image: '/path/to/image.jpg', type: 'cover art', link: 'https://soundcloud.com/artist' }
 */
 const artists = [
-  { name: 'PRXJECT SIN', image: 'obssd_work/prxjectsin @imobssd.png', type: 'animation', link: 'https://soundcloud.com/example-prxject' },
-  { name: 'Jusertz "BLAKK TRUKK"', image: 'obssd_work/juzerts blakktrukk @imobssd.png', type: 'animation', link: 'https://soundcloud.com/example-jusertz' },
-  { name: 'Monkayo "Anhedonia"', image: '/obssd_work/monkayo anhedonia @imobssd.webp', type: 'cover art', link: 'https://soundcloud.com/example-monkayo' },
-  { name: '6astard "Restless Dreams"', image: '/obssd_work/6astard restlessdteams 1 @imobssd.webp', type: 'cover art', link: 'https://soundcloud.com/example-6astard' },
+  { name: '3hunnaracks', image: 'https://i1.sndcdn.com/avatars-wEKvVAzTBwoLzTof-oOMOEQ-t1080x1080.jpg', type: 'ARTIST', link: 'https://soundcloud.com/3hunnaracks' },
+  { name: '3hunnaracks', image: 'https://i1.sndcdn.com/avatars-wEKvVAzTBwoLzTof-oOMOEQ-t1080x1080.jpg', type: 'ARTIST', link: 'https://soundcloud.com/3hunnaracks' },
+  { name: '3hunnaracks', image: 'https://i1.sndcdn.com/avatars-wEKvVAzTBwoLzTof-oOMOEQ-t1080x1080.jpg', type: 'ARTIST', link: 'https://soundcloud.com/3hunnaracks' },
+  { name: '3hunnaracks', image: 'https://i1.sndcdn.com/avatars-wEKvVAzTBwoLzTof-oOMOEQ-t1080x1080.jpg', type: 'ARTIST', link: 'https://soundcloud.com/3hunnaracks' },
+  { name: '3hunnaracks', image: 'https://i1.sndcdn.com/avatars-wEKvVAzTBwoLzTof-oOMOEQ-t1080x1080.jpg', type: 'ARTIST', link: 'https://soundcloud.com/3hunnaracks' },
+  { name: '3hunnaracks', image: 'https://i1.sndcdn.com/avatars-wEKvVAzTBwoLzTof-oOMOEQ-t1080x1080.jpg', type: 'ARTIST', link: 'https://soundcloud.com/3hunnaracks' },
+  { name: '3hunnaracks', image: 'https://i1.sndcdn.com/avatars-wEKvVAzTBwoLzTof-oOMOEQ-t1080x1080.jpg', type: 'ARTIST', link: 'https://soundcloud.com/3hunnaracks' },
+
   // Add more entries here...
 ];
 
