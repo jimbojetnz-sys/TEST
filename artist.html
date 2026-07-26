@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The artists of Frontlime Underground">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+    
+    <link rel="icon" href="/FTL_ASSETS/FTL_FAVICON_96.png">
+    <link rel="stylesheet" href="/custom.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('/FTL_ASSETS/FTL_ARTIST_CAMO.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Arial', Arial, sans-serif;
+        }
+
+/* LOGO */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.logo-img {
+  max-width: 340px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.logo-img:hover {
+  transform: scale(1.05);
+}
+  
+/* CONTACT FOOTER */
+.contact-footer {
+  display: flex;
+  justify-content: center;
+  padding: 120px 0 40px;
+}
+
+.contact-button {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contact-button:hover {
+  transform: scale(1.1);
+}
+
+.contact-button img {
+  display: block;
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+  
+/* GRID */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  padding: 0 40px 40px;
+}
+
+/* ITEM */
+.item {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+  transition: transform 0.2s ease;
+}
+
+.item:hover {
+  transform: translateY(-4px);
+}
+
+/* IMAGE */
+.thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* NO SCALING */
+.thumb:hover img {
+  filter: brightness(70%);
+}
+
+/* CLICK FEEDBACK */
+.thumb:active {
+  transform: scale(0.98);
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.thumb:hover .overlay {
+  opacity: 1;
+}
+
+/* META ROW */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  font-size: 0.75em;
+  gap: 8px;
+}
+
+/* TITLE */
+.title {
+  font-family: 'Allegiance';
+  font-size: 1.2em; /* increased for balance */
+}
+
+/* TEXT ALIGNMENT */
+.title { text-align: left; }
+.date { text-align: center; }
+.type { text-align: right; }
+
+/* STRETCH SYSTEM */
+
+/* TITLE (Allegiance - horizontal stretch ONLY) */
+.title span {
+  display: inline-block;
+  transform: scaleX(1.5);
+  transform-origin: left;
+  white-space: nowrap;
+}
+
+/* DATE + TYPE (Arial - vertical stretch ONLY) */
+.date span,
+.type span {
+  display: inline-block;
+  transform: scaleY(1.3);
+  transform-origin: center;
+  white-space: nowrap;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo-container">
+  <a href="https://frontlineug.com/" title="Back to Home">
+    <img src="/FTL_ASSETS/FTL_LOGO.png" alt="FTL Logo">
+  </a>
+</div>
+
+<div class="gallery">
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.instagram.com/reel/DaZqOTcqGhK/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+      <img src="obssd_work/prxjectsin @imobssd.png">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>PRXJECT SIN</span></div>
+    <!--  <div class="date"><span>2026</span></div> Use if I need to add date-->
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+  
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.instagram.com/reel/Dac3pisKuEW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+      <img src="obssd_work/juzerts blakktrukk @imobssd.png">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Jusertz "BLAKK TRUKK"</span></div>
+    <!--  <div class="date"><span>2026</span></div> Use if I need to add date-->
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+  
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.instagram.com/reel/DZd4rLoqJqF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==')">
+      <img src="obssd_work/juzerts nina @imobssd.png">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Jusertz "NINA"</span></div>
+    <!--  <div class="date"><span>2026</span></div> Use if I need to add date-->
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+  
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.instagram.com/p/DY8uF-6iaG8/')">
+      <img src="obssd_work/Fears 4you @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Parei "Fears"</span></div>
+    <!--  <div class="date"><span>2026</span></div> Use if I need to add date-->
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+  
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=fiIwhJZmwr4')">
+      <img src="obssd_work/mobeats_healyou_@imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Mo Beats "heal you"</span></div>
+    <!--  <div class="date"><span>2026</span></div> Use if I need to add date-->
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+  <!-- LINK ITEM -->
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=Y68mjK2Typs')">
+      <img src="obssd_work/mobeats champion @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Mo Beats "CHAMPION"</span></div>
+    <!--  <div class="date"><span>2026</span></div> Use if I need to add date-->
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.behance.net/gallery/241857001/AFTERLIFE-Visualizer')">
+      <img src="obssd_work/mob afterlife @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>MOB "AFTERLIFE"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=CfTFY0MDc3c')">
+      <img src="obssd_work/conic cover @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Conic "Visualizer"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=jlS8YdcC5OE')">
+      <img src="obssd_work/pareidolia social @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Parei "Social"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLightbox(this)">
+      <img src="/obssd_work/monkayo anhedonia @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Monkayo "Anhedonia"</span></div>
+      <div class="type"><span>cover art</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=wrjdRVCnlM0')">
+      <img src="obssd_work/5K kit @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>OBSSD "5k Kit"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLightbox(this)">
+      <img src="/obssd_work/piet repentance @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Piet "Repentance"</span></div>
+      <div class="type"><span>cover art</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=GbHWDa6HLkM')">
+      <img src="obssd_work/6astard lonely in heave @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>6astard "Lonely In Heaven"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=SSbpC3ukOTA')">
+      <img src="obssd_work/kujo gon3 @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Kujo "GON3"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=Tjtl97dO8sw')">
+      <img src="obssd_work/ploo sexdeath @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Ploo "S3X DEATH"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=dsceb7czeaI')">
+      <img src="obssd_work/pareidolia diamonds @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Parei "Diamonds"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=o0dInSecOBM')">
+      <img src="obssd_work/mob takeover @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>MOB "Takeover"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb" onclick="openLink('https://www.youtube.com/watch?v=2ifqAF9ix1c')">
+      <img src="obssd_work/mob rebirth @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>MOB "Rebirth"</span></div>
+      <div class="type"><span>animation</span></div>
+    </div>
+  </div>
+
+ <div class="item">
+    <div class="thumb" onclick="openLightbox(this)">
+      <img src="/obssd_work/6astard restlessdteams 1 @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>6astard "Restless Dreams"</span></div>
+      <div class="type"><span>cover art</span></div>
+    </div>
+  </div>
+
+ <div class="item">
+    <div class="thumb" onclick="openLightbox(this)">
+      <img src="/obssd_work/mokayo phantom @imobssd.webp">
+      <div class="overlay">VIEW</div>
+    </div>
+    <div class="meta">
+      <div class="title"><span>Monkayo "Phantom"</span></div>
+      <div class="type"><span>cover art</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<!-- CONTACT FOOTER -->
+<div class="contact-footer">
+  <a href="https://obssd.online/contact" class="contact-button">
+    <img src="/obssd_assets/CONTACT_FOOTER.png" alt="Contact">
+  </a>
+</div>
+
+<script>
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  const box = document.getElementById('lightbox');
+  const lightImg = document.getElementById('lightbox-img');
+
+  lightImg.src = img.src;
+  box.classList.add('active');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+function openLink(url) {
+  window.open(url, '_blank');
+}
+
+/* STAGGER LOAD */
+document.querySelectorAll('.item').forEach((el, i) => {
+  el.style.animationDelay = (i * 0.05) + 's';
+});
+</script>
+
+</body>
+</html>
